@@ -4,9 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:IdeaManager.UI"
+        xmlns:views="clr-namespace:IdeaManager.UI.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Button Style="{StaticResource FieldLikeButton}">Liste D'Idées</Button>
+            <Button Style="{StaticResource FieldLikeButton}">Formulaire</Button>
+        </StackPanel>
+        <ContentControl Grid.Column="1" x:Name="ContentView"/>
     </Grid>
 </Window>
