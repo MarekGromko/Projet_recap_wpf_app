@@ -11,8 +11,7 @@ namespace IdeaManager.Data
     {
         public static IServiceCollection AddDataServices(this IServiceCollection services, string connectionString)
         {
-            services.AddDbContext<IdeaDbContext>(options =>
-                options.UseSqlite(connectionString));
+            services.AddDbContext<IdeaDbContext>();
 
             services.AddScoped<IRepository<Idea>, GenericRepository<Idea>>();
             services.AddScoped<IRepository<User>, GenericRepository<User>>();

@@ -8,10 +8,9 @@ namespace IdeaManager.UI.Views
     /// </summary>
     public partial class IdeaFormView : UserControl
     {
-        public IdeaFormView(IdeaFormViewModel ideaFormViewModel)
+        public IdeaFormView()
         {
             InitializeComponent();
-            DataContext = ideaFormViewModel;
         }
     }
 }

@@ -11,6 +11,7 @@ namespace IdeaManager.UI;
 public partial class App : Application
 {
     public static IServiceProvider ServiceProvider { get; private set; }
+    public static Window MainWindow { get; private set; }
 
     protected override void OnStartup(StartupEventArgs e)
     {
@@ -22,8 +23,8 @@ public partial class App : Application
 
         ServiceProvider = services.BuildServiceProvider();
 
-        var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
-        mainWindow.Show();
+        MainWindow = ServiceProvider.GetRequiredService<MainWindow>();
+        MainWindow.Show();
     }
 }
 

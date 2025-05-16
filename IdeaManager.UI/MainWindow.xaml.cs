@@ -8,6 +8,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using IdeaManager.UI.ViewModels;
+using IdeaManager.UI.Views;
 
 namespace IdeaManager.UI;
 
@@ -16,8 +18,19 @@ namespace IdeaManager.UI;
 /// </summary>
 public partial class MainWindow : Window
 {
-    public MainWindow()
+    public MainWindow(IdeaFormViewModel vm)
     {
         InitializeComponent();
+        DataContext = vm;
+    }
+
+    private void InjectIdeaFormViewModel(object sender, RoutedEventArgs e)
+    {
+        DataContext = App.ServiceProvider.GetService(typeof(IdeaFormViewModel));
+    }
+
+    private void InjectIdeaListViewModel(object sender, RoutedEventArgs e)
+    {
+        DataContext = App.ServiceProvider.GetService(typeof(IdeaListViewModel));
     }
 }
